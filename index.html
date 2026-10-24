@@ -3,56 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trunks - Asistente Virtual de Física II</title>
-    <!-- Tailwind CSS para diseño moderno -->
+    <title>Trunks - Asistente IA de Física II</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js para las gráficas requeridas -->
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-trunks-dark: #0f071e;
+            --bg-trunks: #0f071e;
             --purple-main: #6b21a8;
             --purple-accent: #a855f7;
             --purple-light: #d8b4fe;
         }
         body {
-            background-color: var(--bg-trunks-dark);
+            background-color: var(--bg-trunks);
             color: #f3e8ff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .trunks-glow {
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-        }
-        .trunks-card {
-            background: rgba(30, 15, 60, 0.85);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-        }
+        .trunks-glow { box-shadow: 0 0 25px rgba(168, 85, 247, 0.4); }
+        .trunks-card { background: rgba(30, 15, 60, 0.9); border: 1px solid rgba(168, 85, 247, 0.3); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-    <!-- ENCABEZADO ESTILO DRAGON BALL / TRUNKS -->
-    <header class="bg-gradient-to-r from-purple-950 via-purple-900 to-indigo-950 border-b-2 border-purple-500 py-6 px-4 shadow-xl text-center">
+    <!-- ENCABEZADO OFICIAL -->
+    <header class="bg-gradient-to-r from-purple-950 via-purple-900 to-indigo-950 border-b-2 border-purple-500 py-6 px-4 text-center shadow-2xl">
         <div class="max-w-4xl mx-auto">
-            <span class="text-xs uppercase tracking-widest text-purple-300 font-semibold bg-purple-900/60 px-3 py-1 rounded-full border border-purple-500/40">FÍSICA II - 22026-2990-020-A</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-400 to-indigo-200 mt-2 tracking-wide drop-shadow">
-                TRUNKS: ASISTENTE VIRTUAL
+            <span class="text-xs uppercase tracking-widest text-purple-300 font-bold bg-purple-900/80 px-4 py-1 rounded-full border border-purple-400/50">FÍSICA II - 22026-2990-020-A</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-purple-400 to-indigo-200 mt-2">
+                TRUNKS: ASISTENTE IA VIRTUAL
             </h1>
-            <p class="text-purple-200/80 text-sm mt-1">Sistema Inteligente de Análisis Físico y Resolución de Problemas</p>
+            <p class="text-purple-200/80 text-sm mt-1">Sistema Inteligente con Análisis Experimental, Voz, Visión y Simulación</p>
         </div>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="max-w-4xl w-full mx-auto p-4 md:p-6 flex-grow space-y-6">
 
-        <!-- TARJETA DE BIENVENIDA Y CREDENCIALES -->
+        <!-- CREDENCIALES Y BIENVENIDA -->
         <div class="trunks-card rounded-2xl p-6 trunks-glow text-center relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
             <h2 class="text-2xl font-bold text-purple-300 mb-2">¡Bienvenido al Panel Académico!</h2>
-            <p class="text-purple-100/90 mb-4 text-sm md:text-base">
-                Asistente interactivo desarrollado para la optimización de cálculos experimentales, estadística aplicada y análisis de variables físicas.
+            <p class="text-purple-100/90 mb-4 text-sm">
+                Asistente virtual autónomo con capacidades de Inteligencia Artificial para resolver problemas físicos, explicaciones paso a paso y validación de datos.
             </p>
-            <div class="inline-block bg-purple-950/80 border border-purple-500/50 rounded-xl px-6 py-3 text-left">
+            <div class="inline-block bg-purple-950/90 border border-purple-500/50 rounded-xl px-6 py-3 text-left shadow-inner">
                 <p class="text-xs text-purple-400 font-semibold uppercase tracking-wider mb-1">Integrantes del Proyecto:</p>
                 <ul class="space-y-1 text-sm md:text-base font-medium text-purple-100">
                     <li class="flex items-center gap-2">✦ Helen Mishel Buc</li>
@@ -61,9 +56,218 @@
             </div>
         </div>
 
-        <!-- NAVEGACIÓN DE MÓDULOS -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <button onclick="cambiarModulo('estadistica')" id="btn-estadistica" class="p-3 rounded-xl font-semibold text-sm transition-all bg-purple-700 text-white shadow-lg border border-purple-400">Estadística & Datos</button>
-            <button onclick="cambiarModulo('graficas')" id="btn-graficas" class="p-3 rounded-xl font-semibold text-sm transition-all bg-purple-950/60 text-purple-300 hover:bg-purple-900/50 border border-purple-800">Tablas & Gráficas</button>
-            <button onclick="cambiarModulo('probabilidad')" id="btn-probabilidad" class="p-3 rounded-xl font-semibold text-sm transition-all bg-purple-950/60 text-purple-300 hover:bg-purple-900/50 border border-purple-800">Probabilidad</button>
-            <button onclick="cambiarModulo('variables
+        <!-- PANEL DE HERRAMIENTAS IA (Voz, Fotos, Chat) -->
+        <div class="trunks-card rounded-2xl p-5 border border-purple-500/40 shadow-xl space-y-4">
+            <h3 class="text-lg font-bold text-purple-300 flex items-center gap-2">🤖 Panel de Inteligencia Artificial & Multimodal</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button onclick="activarDictadoVoz()" class="bg-purple-900/60 hover:bg-purple-800 text-purple-200 border border-purple-500/40 rounded-xl p-3 text-sm font-semibold flex items-center justify-center gap-2 transition-all">
+                    🎤 Dictado por Voz
+                </button>
+                <label class="bg-purple-900/60 hover:bg-purple-800 text-purple-200 border border-purple-500/40 rounded-xl p-3 text-sm font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer">
+                    📷 Subir / Tomar Foto
+                    <input type="file" accept="image/*" onchange="procesarFoto(event)" class="hidden">
+                </label>
+                <button onclick="generarGraficoTrunksIA()" class="bg-purple-900/60 hover:bg-purple-800 text-purple-200 border border-purple-500/40 rounded-xl p-3 text-sm font-semibold flex items-center justify-center gap-2 transition-all">
+                    ⚡ Generar Imagen IA
+                </button>
+            </div>
+            <div id="iaStatusBox" class="bg-purple-950/80 p-3 rounded-xl border border-purple-800/60 text-xs text-purple-300 hidden">
+                <span id="iaStatusText">Procesando acción de IA...</span>
+            </div>
+        </div>
+
+        <!-- NAVEGACIÓN DE MÓDULOS DE LA RÚBRICA -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            <button onclick="cambiarModulo('estadistica')" id="btn-estadistica" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-700 text-white shadow border border-purple-400">1. Estadística</button>
+            <button onclick="cambiarModulo('datos')" id="btn-datos" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-950/60 text-purple-300 border border-purple-800">2. Experimentales</button>
+            <button onclick="cambiarModulo('graficas')" id="btn-graficas" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-950/60 text-purple-300 border border-purple-800">3. Tablas & Gráficas</button>
+            <button onclick="cambiarModulo('probabilidad')" id="btn-probabilidad" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-950/60 text-purple-300 border border-purple-800">4. Probabilidad</button>
+            <button onclick="cambiarModulo('variables')" id="btn-variables" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-950/60 text-purple-300 border border-purple-800 col-span-2 sm:col-span-1">5. Variables & Ejercicios</button>
+        </div>
+
+        <!-- CONTENEDORES DE LOS MÓDULOS -->
+        <div class="trunks-card rounded-2xl p-6 shadow-xl">
+            
+            <!-- MÓDULO 1: ESTADÍSTICA DESCRIPTIVA -->
+            <div id="modulo-estadistica" class="space-y-4">
+                <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">📊 Estadística Descriptiva</h3>
+                <p class="text-sm text-purple-200/80">Calcula media, mediana, moda, rango y desviación estándar:</p>
+                <div class="flex gap-2">
+                    <input type="text" id="inputEstadistica" value="2.1, 2.3, 2.2, 2.4, 2.0" class="flex-grow bg-purple-950/60 border border-purple-700 rounded-xl px-4 py-2 text-white font-mono text-sm">
+                    <button onclick="calcularEstadisticaDescriptiva()" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-2 rounded-xl text-sm shadow">Calcular</button>
+                </div>
+                <div id="errorEst" class="text-red-400 text-xs hidden"></div>
+                <div id="resEstContainer" class="bg-purple-950/80 p-4 rounded-xl border border-purple-800 grid grid-cols-2 md:grid-cols-5 gap-2 text-center hidden">
+                    <div class="bg-purple-900/40 p-2 rounded"><span class="text-xs text-purple-300 block">Media</span><span id="stMedia" class="font-bold text-sm">--</span></div>
+                    <div class="bg-purple-900/40 p-2 rounded"><span class="text-xs text-purple-300 block">Mediana</span><span id="stMediana" class="font-bold text-sm">--</span></div>
+                    <div class="bg-purple-900/40 p-2 rounded"><span class="text-xs text-purple-300 block">Moda</span><span id="stModa" class="font-bold text-sm">--</span></div>
+                    <div class="bg-purple-900/40 p-2 rounded"><span class="text-xs text-purple-300 block">Rango</span><span id="stRango" class="font-bold text-sm">--</span></div>
+                    <div class="bg-purple-900/40 p-2 rounded col-span-2 md:col-span-1"><span class="text-xs text-purple-300 block">Desv. Muestral</span><span id="stDesv" class="font-bold text-sm">--</span></div>
+                </div>
+            </div>
+
+            <!-- MÓDULO 2: DATOS EXPERIMENTALES -->
+            <div id="modulo-datos" class="space-y-4 hidden">
+                <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">🔬 Datos Experimentales & Incertidumbre</h3>
+                <p class="text-sm text-purple-200/80">Procesa series de mediciones físicas y maneja unidades experimentales:</p>
+                <div class="flex gap-2">
+                    <input type="text" id="inputDatosExp" value="5.2, 5.4, 5.3, 5.5, 5.1" class="flex-grow bg-purple-950/60 border border-purple-700 rounded-xl px-4 py-2 text-white font-mono text-sm">
+                    <button onclick="procesarDatosExperimentales()" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-2 rounded-xl text-sm shadow">Procesar</button>
+                </div>
+                <div id="resDatosExp" class="bg-purple-950/80 p-4 rounded-xl border border-purple-800 text-xs space-y-1 hidden">
+                    <p><strong>Valor Promedio:</strong> <span id="expProm" class="text-purple-300 font-bold"></span></p>
+                    <p><strong>Incertidumbre Estándar:</strong> <span id="expInc" class="text-purple-300 font-bold"></span></p>
+                    <p><strong>Reporte Final:</strong> <span id="expReporte" class="text-purple-200"></span></p>
+                </div>
+            </div>
+
+            <!-- MÓDULO 3: TABLAS Y GRÁFICAS -->
+            <div id="modulo-graficas" class="space-y-4 hidden">
+                <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">📈 Tablas de Frecuencia y Histogramas</h3>
+                <p class="text-sm text-purple-200/80">Visualización gráfica interactiva para análisis de mediciones:</p>
+                <div class="bg-purple-950/80 p-4 rounded-xl border border-purple-800 flex justify-center h-64">
+                    <canvas id="miGraficaCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- MÓDULO 4: PROBABILIDAD -->
+            <div id="modulo-probabilidad" class="space-y-4 hidden">
+                <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">🎲 Probabilidad & Distribución Normal</h3>
+                <p class="text-sm text-purple-200/80">Cálculo de puntaje Z para eventos en física experimental:</p>
+                <div class="grid grid-cols-3 gap-2">
+                    <input type="number" id="probX" value="2.3" placeholder="Valor X" class="bg-purple-950/60 border border-purple-700 rounded-lg p-2 text-white text-sm">
+                    <input type="number" id="probMu" value="2.2" placeholder="Media" class="bg-purple-950/60 border border-purple-700 rounded-lg p-2 text-white text-sm">
+                    <input type="number" id="probSigma" value="0.1" placeholder="Desv." class="bg-purple-950/60 border border-purple-700 rounded-lg p-2 text-white text-sm">
+                </div>
+                <button onclick="calcularProbabilidadZ()" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-2 rounded-xl text-sm shadow">Calcular Puntaje Z</button>
+                <div id="resProb" class="bg-purple-950/80 p-4 rounded-xl border border-purple-800 text-sm hidden">
+                    <p><strong>Resultado Puntaje Z:</strong> <span id="valZ" class="text-purple-300 font-bold"></span></p>
+                </div>
+            </div>
+
+            <!-- MÓDULO 5: RELACIÓN DE VARIABLES Y EJERCICIOS (10+) -->
+            <div id="modulo-variables" class="space-y-4 hidden">
+                <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">📉 Relación de Variables & 10+ Ejercicios</h3>
+                
+                <div class="space-y-2 bg-purple-950/40 p-4 rounded-xl border border-purple-800/60">
+                    <h4 class="font-bold text-purple-300 text-sm">Regresión Lineal Simple ($y = mx + b$)</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" id="regX" value="1, 2, 3, 4, 5" class="bg-purple-950 border border-purple-700 rounded p-2 text-xs text-white">
+                        <input type="text" id="regY" value="2.1, 3.9, 6.1, 8.0, 10.2" class="bg-purple-950 border border-purple-700 rounded p-2 text-xs text-white">
+                    </div>
+                    <button onclick="calcularRegresionLineal()" class="bg-purple-600 text-white text-xs px-4 py-1.5 rounded font-semibold">Calcular Ecuación</button>
+                    <p id="resRegresion" class="text-xs text-purple-200 mt-1"></p>
+                </div>
+
+                <div class="space-y-3 pt-2">
+                    <h4 class="font-bold text-purple-300 text-sm">Práctica con Retroalimentación (10 Ejercicios Obligatorios)</h4>
+                    <div class="flex gap-1 overflow-x-auto pb-1 text-xs">
+                        <button onclick="cargarEj(0)" class="px-2.5 py-1 bg-purple-800 text-white rounded whitespace-nowrap">Ej 1</button>
+                        <button onclick="cargarEj(1)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 2</button>
+                        <button onclick="cargarEj(2)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 3</button>
+                        <button onclick="cargarEj(3)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 4</button>
+                        <button onclick="cargarEj(4)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 5</button>
+                        <button onclick="cargarEj(5)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 6</button>
+                        <button onclick="cargarEj(6)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 7</button>
+                        <button onclick="cargarEj(7)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 8</button>
+                        <button onclick="cargarEj(8)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 9</button>
+                        <button onclick="cargarEj(9)" class="px-2.5 py-1 bg-purple-900 text-purple-300 rounded whitespace-nowrap">Ej 10</button>
+                    </div>
+                    <div class="bg-purple-950/80 p-3 rounded-xl border border-purple-800 text-xs space-y-2">
+                        <p id="ejTitulo" class="font-bold text-purple-300"></p>
+                        <p id="ejEnunciado" class="text-purple-100"></p>
+                        <p class="text-purple-300"><strong>Fórmula:</strong> <span id="ejFormula"></span></p>
+                        <div class="flex gap-2 pt-1">
+                            <input type="text" id="ejRespUser" placeholder="Tu respuesta" class="bg-purple-950 border border-purple-700 rounded px-2 py-1 text-white w-36">
+                            <button onclick="verificarEj()" class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-1 rounded font-semibold">Validar</button>
+                        </div>
+                        <p id="ejFeedback" class="font-semibold"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-purple-950 border-t border-purple-900 py-3 text-center text-xs text-purple-400">
+        Trunks IA Assistant &bull; Física II &bull; Universidad Mariano Gálvez &bull; 2026
+    </footer>
+
+    <!-- SCRIPT DE FUNCIONES -->
+    <script>
+        let miGrafica = null;
+
+        function cambiarModulo(mod) {
+            ['estadistica', 'datos', 'graficas', 'probabilidad', 'variables'].forEach(m => {
+                document.getElementById(`modulo-${m}`).classList.add('hidden');
+                document.getElementById(`btn-${m}`).className = "p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-950/60 text-purple-300 border border-purple-800";
+            });
+            document.getElementById(`modulo-${mod}`).classList.remove('hidden');
+            document.getElementById(`btn-${mod}`).className = "p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-700 text-white shadow border border-purple-400";
+            if(mod === 'graficas') renderizarGrafica();
+        }
+
+        function parsear(str) { return str.split(',').map(Number).filter(n => !isNaN(n)); }
+
+        function calcularEstadisticaDescriptiva() {
+            const arr = parsear(document.getElementById('inputEstadistica').value);
+            const err = document.getElementById('errorEst');
+            const cont = document.getElementById('resEstContainer');
+            if(arr.length === 0) { err.textContent = "Ingrese datos válidos"; err.classList.remove('hidden'); cont.classList.add('hidden'); return; }
+            err.classList.add('hidden'); cont.classList.remove('hidden');
+
+            const n = arr.length;
+            const media = arr.reduce((a,b)=>a+b,0)/n;
+            const ord = [...arr].sort((a,b)=>a-b);
+            const mediana = n%2===0 ? (ord[n/2 - 1] + ord[n/2])/2 : ord[Math.floor(n/2)];
+            const rango = ord[n-1] - ord[0];
+            const desv = n>1 ? Math.sqrt(arr.reduce((acc,v)=>acc+Math.pow(v-media,2),0)/(n-1)) : 0;
+
+            document.getElementById('stMedia').textContent = media.toFixed(2);
+            document.getElementById('stMediana').textContent = mediana.toFixed(2);
+            document.getElementById('stModa').textContent = "N/D";
+            document.getElementById('stRango').textContent = rango.toFixed(2);
+            document.getElementById('stDesv').textContent = desv.toFixed(2);
+        }
+
+        function procesarDatosExperimentales() {
+            const arr = parsear(document.getElementById('inputDatosExp').value);
+            if(arr.length===0) return;
+            const prom = arr.reduce((a,b)=>a+b,0)/arr.length;
+            const inc = arr.length>1 ? Math.sqrt(arr.reduce((acc,v)=>acc+Math.pow(v-prom,2),0)/(arr.length*(arr.length-1))) : 0;
+            document.getElementById('expProm').textContent = prom.toFixed(3);
+            document.getElementById('expInc').textContent = inc.toFixed(3);
+            document.getElementById('expReporte').textContent = `Medición válida: (${prom.toFixed(2)} ± ${inc.toFixed(2)}) Unidades`;
+            document.getElementById('resDatosExp').classList.remove('hidden');
+        }
+
+        function renderizarGrafica() {
+            const arr = parsear(document.getElementById('inputEstadistica').value);
+            const ctx = document.getElementById('miGraficaCanvas').getContext('2d');
+            if(miGrafica) miGrafica.destroy();
+            miGrafica = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: arr.map((_,i)=>`Prueba ${i+1}`),
+                    datasets: [{ label: 'Valores', data: arr, backgroundColor: 'rgba(168, 85, 247, 0.7)', borderColor: '#d8b4fe', borderWidth: 1 }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { ticks: { color: '#d8b4fe' } }, y: { ticks: { color: '#d8b4fe' } } } }
+            });
+        }
+
+        function calcularProbabilidadZ() {
+            const x = parseFloat(document.getElementById('probX').value);
+            const mu = parseFloat(document.getElementById('probMu').value);
+            const sig = parseFloat(document.getElementById('probSigma').value);
+            if(sig===0) return;
+            const z = (x - mu)/sig;
+            document.getElementById('valZ').textContent = z.toFixed(4);
+            document.getElementById('resProb').classList.remove('hidden');
+        }
+
+        function calcularRegresionLineal() {
+            const x = parsear(document.getElementById('regX').value);
+            const y = parsear(document.getElementById('regY').value);
+            if(x.length!==y.length || x.length===0) return;
+            const n = x.length;
