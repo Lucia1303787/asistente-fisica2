@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <!-- PANEL DE HERRAMIENTAS IA (Voz, Fotos, Chat) -->
+        <!-- PANEL DE HERRAMIENTAS IA -->
         <div class="trunks-card rounded-2xl p-5 border border-purple-500/40 shadow-xl space-y-4">
             <h3 class="text-lg font-bold text-purple-300 flex items-center gap-2">🤖 Panel de Inteligencia Artificial & Multimodal</h3>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <!-- NAVEGACIÓN DE MÓDULOS DE LA RÚBRICA -->
+        <!-- NAVEGACIÓN DE MÓDULOS -->
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
             <button onclick="cambiarModulo('estadistica')" id="btn-estadistica" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-700 text-white shadow border border-purple-400">1. Estadística</button>
             <button onclick="cambiarModulo('datos')" id="btn-datos" class="p-2.5 rounded-xl font-semibold text-xs transition-all bg-purple-950/60 text-purple-300 border border-purple-800">2. Experimentales</button>
@@ -88,7 +88,7 @@
         <!-- CONTENEDORES DE LOS MÓDULOS -->
         <div class="trunks-card rounded-2xl p-6 shadow-xl">
             
-            <!-- MÓDULO 1: ESTADÍSTICA DESCRIPTIVA -->
+            <!-- MÓDULO 1: ESTADÍSTICA -->
             <div id="modulo-estadistica" class="space-y-4">
                 <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">📊 Estadística Descriptiva</h3>
                 <p class="text-sm text-purple-200/80">Calcula media, mediana, moda, rango y desviación estándar:</p>
@@ -121,7 +121,7 @@
                 </div>
             </div>
 
-            <!-- MÓDULO 3: TABLAS Y GRÁFICAS -->
+            <!-- MÓDULO 3: GRÁFICAS -->
             <div id="modulo-graficas" class="space-y-4 hidden">
                 <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">📈 Tablas de Frecuencia y Histogramas</h3>
                 <p class="text-sm text-purple-200/80">Visualización gráfica interactiva para análisis de mediciones:</p>
@@ -145,12 +145,12 @@
                 </div>
             </div>
 
-            <!-- MÓDULO 5: RELACIÓN DE VARIABLES Y EJERCICIOS (10+) -->
+            <!-- MÓDULO 5: VARIABLES Y EJERCICIOS -->
             <div id="modulo-variables" class="space-y-4 hidden">
                 <h3 class="text-xl font-bold text-purple-300 border-b border-purple-800 pb-2">📉 Relación de Variables & 10+ Ejercicios</h3>
                 
                 <div class="space-y-2 bg-purple-950/40 p-4 rounded-xl border border-purple-800/60">
-                    <h4 class="font-bold text-purple-300 text-sm">Regresión Lineal Simple ($y = mx + b$)</h4>
+                    <h4 class="font-bold text-purple-300 text-sm">Regresión Lineal Simple (y = mx + b)</h4>
                     <div class="grid grid-cols-2 gap-2">
                         <input type="text" id="regX" value="1, 2, 3, 4, 5" class="bg-purple-950 border border-purple-700 rounded p-2 text-xs text-white">
                         <input type="text" id="regY" value="2.1, 3.9, 6.1, 8.0, 10.2" class="bg-purple-950 border border-purple-700 rounded p-2 text-xs text-white">
@@ -271,3 +271,4 @@
             const y = parsear(document.getElementById('regY').value);
             if(x.length!==y.length || x.length===0) return;
             const n = x.length;
+            const sumX = x.reduce((a,b)=>a+b,0), sumY = y.reduce((a,b)=>a
